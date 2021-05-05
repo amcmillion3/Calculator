@@ -1,0 +1,141 @@
+ main {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     grid-template-rows: auto;
+     grid-template-areas:
+        "display display display display"
+        "clear delete power divide"
+        "seven eight nine multiply"
+        "four five six subtract"
+        "one two three add"
+        "zero decimal negative equals";
+     grid-gap: 10px 10px;
+     margin: 50px auto;
+     padding: 10px;
+     text-align: center;
+     border: 1px solid black;
+     border-radius: 5px;
+     width: 500px;
+     height: auto;
+     background: #404040;
+ }
+
+ .display {
+     grid-area: display;
+     border: 3px solid black;
+     border-radius: 5px;
+     height: 50px;
+     text-align: right;
+     background: white;
+     padding: 5px;
+     font-size: 48px;
+ }
+
+ .calc-btn {
+     background: white;
+     padding: 20px;
+     margin: 5px;
+     border: 1px solid black;
+     border-radius: 5px;
+     font-size: 30px;
+ }
+
+ #clear {
+     grid-area: clear;
+     background: #0099ff;
+ }
+ 
+ #delete {
+    grid-area: delete;
+    background: #FF0000;
+}
+
+#power {
+    grid-area: power;
+    background: #FFFF66;
+}
+
+#divide {
+    grid-area: divide;
+    background: #FFFF66;
+}
+
+#multiply {
+    grid-area: multiply;
+    background: #FFFF66;
+}
+
+#subtract {
+    grid-area: subtract;
+    background: #FFFF66;
+}
+
+#add {
+    grid-area: add;
+    background: #FFFF66;
+}
+
+#equals {
+    grid-area: equals;
+    background: #00CC00;
+}
+
+#negative {
+    grid-area: negative;
+    background: #F5F5F5;
+}
+
+#decimal {
+    grid-area: decimal;
+    background: #F5F5F5;
+}
+
+#zero {
+    grid-area: zero;
+    background: #F5F5F5;
+}
+
+#one {
+    grid-area: one;
+    background: #F5F5F5;
+}
+
+#two {
+    grid-area: two;
+    background: #F5F5F5;
+}
+
+#three {
+    grid-area: three;
+    background: #F5F5F5;
+}
+
+#four {
+    grid-area: four;
+    background: #F5F5F5;
+}
+
+#five {
+    grid-area: five;
+    background: #F5F5F5;
+}
+
+#six {
+    grid-area: six;
+    background: #F5F5F5;
+}
+
+#seven {
+    grid-area: seven;
+    background: #F5F5F5;
+}
+
+#eight {
+    grid-area: eight;
+    background: #F5F5F5;
+}
+
+#nine {
+    grid-area: nine;
+    background: #F5F5F5;
+}
