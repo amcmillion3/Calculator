@@ -1,50 +1,52 @@
-const display = document.querySelector(".display");
-const clearBtn = document.getElementById("clear");
-const deleteBtn = document.getElementById("delete");
-const powerBtn = document.getElementById("power");
-const divideBtn = document.getElementById("divide");
-const multiplyBtn = document.getElementById("multiply");
-const subtractBtn = document.getElementById("subtract");
-const addBtn = document.getElementById("add");
-const equalsBtn = document.getElementById("equals");
-const negativeBtn = document.getElementById("negative");
-const decimalBtn = document.getElementById("decimal");
-const zeroBtn = document.getElementById("zero");
-const oneBtn = document.getElementById("one");
-const twoBtn = document.getElementById("two");
-const threeBtn = document.getElementById("three");
-const fourBtn = document.getElementById("four");
-const fiveBtn = document.getElementById("five");
-const sixBtn = document.getElementById("six");
-const sevenBtn = document.getElementById("seven");
-const eightBtn = document.getElementById("eight");
-const nineBtn = document.getElementById("nine");
+class Calculator {
+    // Allows us to set text elements in calculator class
+    constructor(previousOperandTextElement, currentOperandTextElement) {
+        this.previousOperandTextElement = previousOperandTextElement;
+        this.currentOperandTextElement = currentOperandTextElement;
+        this.clear();
+    };
 
-// Add
-function add(a,b) {
-    return a + b;
+    // Sets all values to default
+    clear() {
+        this.currentOperand = "";
+        this.previousOperand = "";
+        this.operation = undefined;
+    };
+
+    delete() {
+
+    };
+
+    appendNumber(number) {
+        this.currentOperand = number;
+    };
+
+    selectOperation(operation) {
+
+    };
+    
+    operate() {
+
+    };
+     
+    updateDisplay() {
+        this.currentOperandTextElement.innerText = this.currentOperand;
+    };
 };
 
-// Subtract
-function subtract(a,b) {
-    return a - b;
-};
+const numberButtons = document.querySelectorAll("[data-number]");
+const operationButtons = document.querySelectorAll("[data-operation]");
+const equalsButton = document.querySelector("[data-equals]");
+const clearButton = document.querySelector("[data-clear]");
+const deleteButton = document.querySelector("[data-delete]");
+const previousOperandTextElement = document.querySelector("[data-previous-operand]");
+const currentOperandTextElement = document.querySelector("[data-current-operand]");
 
-// Multiply
-function multiply(a,b) {
-    return a * b;
-};
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
 
-// Divide 
-function divide(a,b) {
-    if (b == 0 ) {
-        return "No no no! Bad user!"
-    } else {
-        return a/b;
-    }
-};
-
-// Power
-function power(a,b) {
-    return a ** b;
-};
+numberButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        calculator.appendNumber(button.innerText);
+        calculator.updateDisplay();
+    })
+})
